@@ -8,7 +8,8 @@ let imagenes = [
 
 let indice = 0;
 
-function siguiente() {
+
+document.getElementById("after").addEventListener("click",() => {
     indice++;
 
     if (indice >= imagenes.length) {
@@ -16,11 +17,11 @@ function siguiente() {
     }
 
     document.getElementById("imagen").src = imagenes[indice];
+})
 
-}
-document.getElementById("after").addEventListener("click",siguiente)
 
-function anterior() {
+
+document.getElementById("before").addEventListener("click",() => {
     indice--;
 
     if (indice < 0) {
@@ -28,5 +29,4 @@ function anterior() {
     }
 
     document.getElementById("imagen").src = imagenes[indice];
-}
-document.getElementById("before").addEventListener("click",anterior)
+})

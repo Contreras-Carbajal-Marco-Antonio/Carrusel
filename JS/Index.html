@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carrusel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .fondo-animado {
+            width: 100vw;
+            height: 100vh;
+            /* Definimos los colores del degradado */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            /* Hacemos el fondo más grande que la pantalla para que haya margen de movimiento */
+            background-size: 400% 400%;
+            /* Aplicamos la animación: nombre, duración, velocidad constante y repetición infinita */
+            animation: movimientoFondo 10s ease infinite;
+        }
+
+        /* Configuramos los movimientos del fondo */
+        @keyframes movimientoFondo {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        button{
+            border-radius: 15px;
+            border: none;
+            background-color: #63458A;
+            height: 30px;
+            width: auto;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #B288C0;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="fondo-animado">
+        <center>
+            <div class="row">
+                <div class="col">
+                    <img id="imagen" src="/Img/aguacero.png" alt="Imagen">
+                </div>
+                <div class="col">
+                    <button type="button" id="before">Volver</button>
+                    <button type="button" id="after">Siguiente</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" href="Index.html">Regresar al inicio</button>
+                </div>
+            </div>
+        </center>
+    </div>
+<script src="JS/Carrusel.js"></script>
+</body>
+</html>
